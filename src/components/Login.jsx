@@ -7,17 +7,16 @@ import Result from './Result';
 export default function Login(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [showLogin, setShowLogin] = useState(false)
     const localStorageEmail = localStorage.getItem("email")
     const localStorageName = localStorage.getItem("name")
     const localStoragePassword = localStorage.getItem("password")
-    const { start, exit } = useContext(QuizContext)
+    const { start, exit, showLogin, setShowLogin } = useContext(QuizContext)
 
-    useEffect(() => {
-        if (localStorageEmail) {
-            setShowLogin(true)
-        }
-    })
+    // useEffect(() => {
+    //     if (localStorageEmail) {
+    //         setShowLogin(true)
+    //     }
+    // })
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,6 +27,8 @@ export default function Login(props) {
 
 
     }
+
+    console.log("showlogin",showLogin)
 
     return (
         <>{
