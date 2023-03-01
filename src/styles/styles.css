@@ -23,6 +23,12 @@
     
 }
 
+.auth-form-container > h2 {
+    color: white;
+    font-size: large;
+    font-weight: 500;
+}
+
 
 label {
     color: white;

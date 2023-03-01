@@ -1,12 +1,8 @@
-import React, {useState} from 'react';
-import Home from './components/Home';
-import Quiz from './components/Quiz';
-import Result from './components/Result';
-import QuizHolder, { QuizContext } from './context/QuizHolder';
-import { useContext } from 'react';
-import './styles/styles.css'
+import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import './styles/styles.css';
 function App() {
   const[currentForm,setCurrentForm] = useState("signup")
 
@@ -16,6 +12,8 @@ function App() {
   }
   return (
     <>
+     <Helmet><title>Quiz App</title></Helmet>
+
     <div>
       {
         currentForm==="signup" ? <Signup onFormSwitch={toggleForm}/>  : <Login onFormSwitch={toggleForm} /> 

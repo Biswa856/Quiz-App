@@ -12,23 +12,19 @@ export default function Login(props) {
     const localStoragePassword = localStorage.getItem("password")
     const { start, exit, showLogin, setShowLogin } = useContext(QuizContext)
 
-    // useEffect(() => {
-    //     if (localStorageEmail) {
-    //         setShowLogin(true)
-    //     }
-    // })
-
+    
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(localStorageEmail===email && localStoragePassword===password)
-        localStorage.setItem("signup",email)
-        alert("Login Successful")
-        window.location.reload()
-
-
+        if(localStorageEmail===email && localStoragePassword===password){
+            localStorage.setItem("signup",email)
+            alert("Login Successful")
+            window.location.reload()
+        }else{
+            alert("Give the proper Email id and Password")
+        }
+      
     }
 
-    console.log("showlogin",showLogin)
 
     return (
         <>{
@@ -47,7 +43,7 @@ export default function Login(props) {
             
                 <div className='app'>
                     <div className='auth-form-container'>
-                        <h2>hello {localStorageName} please Login</h2>
+                        <h2>Hello {localStorageName} please Login</h2>
                         <form className='login-form' onSubmit={handleSubmit}>
                             <label htmlFor="email">email</label>
                             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='youremail@gmail.com' id="email" name="email" />

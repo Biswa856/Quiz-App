@@ -1,5 +1,4 @@
 import React, { Fragment, useContext } from 'react'
-import { Helmet } from 'react-helmet';
 import { QuizContext } from '../context/QuizHolder';
 export default function Home() {
     const { setStart,setShowLogin } = useContext(QuizContext)
@@ -14,7 +13,6 @@ export default function Home() {
     return (
 
         <Fragment>
-            <Helmet><title>Quiz App</title></Helmet>
             <div id='home'>
                 <section>
                     <div className='w-full h-15 bg-blue-400 flex justify-end p-3'>

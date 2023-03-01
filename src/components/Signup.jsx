@@ -33,6 +33,8 @@ export default function Signup(props) {
             localStorage.setItem("signup", email);
             alert("Register Successful")
             window.location.reload()
+        } else{
+            alert("Fill the Details properly")
         }
 
     }
