@@ -108,9 +108,10 @@ export default function QuizHolder(props) {
   const [exit, setExit] = useState(false);
   const [showLogin, setShowLogin] = useState(false)
   const [correct,setCorrect] = useState(0);
+  const [attempt, setAttempt] = useState(1);
 
   return (
-    <QuizContext.Provider value={{ start, exit, setStart, setExit, quizObj,correct,setCorrect,showLogin,setShowLogin }}>
+    <QuizContext.Provider value={{ start, exit, setStart, setExit, quizObj,correct,setCorrect,showLogin,setShowLogin, attempt, setAttempt }}>
       {props.children}
     </QuizContext.Provider>
   )

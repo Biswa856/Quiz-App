@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { QuizContext } from '../context/QuizHolder';
 import Home from './Home';
 import Quiz from './Quiz';
@@ -10,7 +10,7 @@ export default function Login(props) {
     const localStorageEmail = localStorage.getItem("email")
     const localStorageName = localStorage.getItem("name")
     const localStoragePassword = localStorage.getItem("password")
-    const { start, exit, showLogin, setShowLogin } = useContext(QuizContext)
+    const { start, exit, showLogin } = useContext(QuizContext)
 
     
     const handleSubmit = (e) => {

@@ -11,11 +11,10 @@ export default function Quiz() {
 }
 
 const Box = ({ currentQuiz,next }) => {
-    const { quizObj, correct, setCorrect, setExit } = useContext(QuizContext);
+    const { quizObj, correct, setCorrect, setExit,setAttempt,attempt } = useContext(QuizContext);
     const [ans, setAns] = useState("");
 
     const saveHandler = () => {
-        console.log("clicked")
         if(quizObj[currentQuiz].correctIndex === ans){
             setCorrect(correct + 1);
         }
@@ -25,6 +24,8 @@ const Box = ({ currentQuiz,next }) => {
         }else{
             next(currentQuiz+1);
         }
+
+        setAttempt(attempt+1)
        
     }
 
